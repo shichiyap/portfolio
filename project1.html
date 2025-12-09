@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Yap Shi Chi | Portfolio</title>
+    <link rel="icon" href="assets/Profile_pic.png" type="image/png"/>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+    
+</head>
+
+<nav class="navbar">
+    <img src="assets/Profile_pic.png" alt="Profile" class="nav-profile" />
+
+    <div class="nav-menu">
+        <a href="index.html" class="active">Projects</a>
+        <a href="other.html">Other Works</a>
+        <a href="about.html">About</a>
+
+        <div class="nav-buttons">
+            <a href="assets/YapShiChi_Resume.pdf" id="resume">
+                <button class="btn-outline">View Resume</button>
+            </a>
+            <a href="https://www.linkedin.com/in/yapshichi/" id="linkedin">
+                <button class="btn-primary">LinkedIn Profile</button>
+            </a>
+        </div>
+    </div>
+</nav>
+
+<div class="FYP">
+    <h2>UR-MU Application</h2>
+    <figure class="feature-media">
+        <img src="assets/HP1.svg">
+    </figure>
+    <div class="projectoverview-box">
+        <h3>Project Overview</h3>
+        <div class="overview-section">
+            <h4>Project</h4>
+            <p>Redesigned the official Urban Museum (UR-MU) website into a mobile application to modernise the visitor experience with information clarity and strengthen engagement with art content.</p>
+        </div>
+        
+        <div class="overview-section">
+            <h4>My Role</h4>
+            <p>UI/UX Designer</p>
+            <p class="elaboration"><I>(led Stage 3: Parallel Design, Participatory Design, Style Guide, and Prototype Rationale;<br>
+                assisted in Stage 1 : User, Task, and Environment Analysis)</I></p>
+        </div>
+        
+        <div class="overview-section">
+            <h4>Timeline</h4>
+            <p>May - August 2025</p>
+        </div>
+        
+        <div class="overview-section">
+            <h4>Platforms & Tools</h4>
+            <p>Figma</p>
+        </div>
+
+        <div class="overview-section">
+            <h4>Impact</h4>
+            <p>Usability testing showed a 20% improvement in task efficiency and an 80% reduction user errors, which directly validates the effectiveness of the redesign.
+            </p>
+        </div>
+    </div>       
+</div>
+
+<section class="problem">
+    <div class="problem__head">
+        <span class="problem__no">01</span>
+        <h2 class="problem__title">Preliminary Research</h2>
+    </div>
+
+    <p class="problem__intro">
+    Understanding the users, their goals, and the environment to inform a human-centered design. So to begin with the process, I conducted a couple of research activities. 
+    </p>
+
+    <div class="stakeholder_analysis">
+        <h3>Stakeholder Analysis</h3>
+        <p class="description">
+        We conducted a stakeholder analysis using <b>Mendelow’s Matrix</b> to identify and prioritise key stakeholders based on their power and level of interest in the redesign process.
+        </p>
+
+
+        <figure class="matrix">
+            <img src="assets/Matrix.svg">
+        </figure>
+
+        <p class="description" id="reward-description">
+        Through this matrix, we identified that:
+        </p>
+
+        <ul class="description-list" id="reward-types">
+            <li><b>Keep Satisfied:</b> These stakeholders should be kept informed about the design process and strategic outcomes to maintain confidence and support.</li>
+            <li><b>Key Players:</b> Regular communication and design reviews with them enable better decision-making for the redesigned solution.</li>
+            <li><b>Keep Informed:</b> Valuable feedback such as day-to-day experiences and challenges guided effective design decisions.</li>
+        </ul>
+
+
+        <hr class="section-divider">
+    </div>
+
+    <div class="questionnaire-surveys">
+        <h3>Questionnaire Surveys</h3>
+        <p class="description">
+        We conducted an online questionnaire and received responses from 32 participants without setting any pre-determined criteria to capture diverse user perspectives and behaviours.
+        </p>
+
+        <p class="description" id="questionnaire-description">
+        The goals of this survey were to:
+        </p>
+
+        <ul class="description-list" id="reward-types">
+            <li>Understand the background and learnability of users.</li>
+            <li>Assess technology proficiency and mobile application usage patterns.</li>
+            <li>Explore motivations for using a gallery-related application.</li>
+            <li>Identify accessibility and personalisation needs.</li>
+        </ul>
+    </div>
+    
+
+    <div class="quotes">
+        <h3>Some design expectations were voted...</h3>
+
+        <div class="expectation-grid">
+            <div class="expectation-card">
+                I hope the gallery app is easy to navigate as I don’t want to get lost looking for event details.
+            </div>
+
+            <div class="expectation-card">
+                The interfaces should look clean and simple because too many elements can feel overwhelming.
+            </div>
+
+            <div class="expectation-card">
+                Buttons and options need to be clear so I know exactly what to tap.
+            </div>
+
+            <div class="expectation-card">
+                Make sure the text is large enough and has good contrast — it’s tiring to read small fonts.
+            </div>
+
+            <div class="expectation-card">
+                A minimalist layout with well-organised screens would make the experience more pleasant.
+            </div>
+        
+        <hr class="section-divider">
+    </div>
+
+    <div class="observations">
+        <h3>Conducting observations</h3>
+
+        <p class="description">
+        It was equally important to observe the real environment of the Urban Museum to identify contextual challenges and opportunities. 
+        This helped uncover how visitors interact with physical exhibits and where the redesigned UR-MU application could bridge existing gaps.
+        </p>
+
+        <p class="description">
+        In order to conduct effective data collection within the designated timeslot, an observation checklist was prepared in advance.
+        </p>
+    </div>
+
+    <div class="button-container">
+        <button class="toggle-btn js-toggle"
+            aria-expanded="false"
+            aria-controls="checklist-observation"
+            data-target="#checklist-observation"
+            data-label-closed="View Observation Outcomes"
+            data-label-open="View Observation Outcomes">
+        <span class="label">View observation outcomes</span>
+        <div class="icons"><img src="icons/Plus.svg" alt=""></div>
+    </button>
+
+        <div class="observation-outcome" id="checklist-observation">
+            <img src="assets/Observation Outcome.svg" alt="">
+        </div>
+    </div>
+</section>
+
+
+<section class="experience">
+    <div class="problem__head">
+        <span class="problem__no">02</span>
+        <h2 class="problem__title">Understanding Current Experience</h2>
+    </div>
+
+    <p class="description">
+        Before redesigning the UR-MU Application, an evaluation of the existing website was conducted to identify usability challenges and inefficiencies within user journeys.
+    </p>
+
+    <p class="problem__intro">
+        This analysis uncovered redundant steps and unclear navigation paths that impacted the overall visitor experience.  
+    </p>
+
+
+    <div class="current-website">
+        <h3>Current Website</h3>
+
+        <p class="description">
+            A heuristic walkthrough of the current 
+            <a href="https://ur-mu.com/" target="_blank" rel="noopener noreferrer">
+                Urban Museum
+            </a>website.
+        </p>
+    </div>
+
+    <hr class="section-divider">
+
+    <div class="task-analysis">
+        <h3>Task Analysis</h3>
+
+        <p class="description">
+            This analysis maps key user tasks to identify usability issues and inefficiencies in the current website.
+        </p>
+
+        <p class="description">
+            <b>Hierarchical Task Analysis 1 - </b>Purchase a General Admission Ticket from the UR-MU website.
+        </p>
+
+        <figure class="HTA">
+            <img src="assets/HTA 1.png">
+        </figure>
+
+        <p class="description" id="questionnaire-description">
+        Pain points identified are:
+        </p>
+
+        <ul class="description-list" id="reward-types">
+            <li><b>Repeated branch selection:</b> Users must reselect the UR-MU branch every time, even when entering from the dedicated page.</li>
+            <li><b>No preview/edit options:</b> Users cannot review or modify their ticket details before confirmation.</li>
+            <li><b>Manual email verification:</b> Users need to switch platforms to confirm payment and access QR codes for ticket validation.</li>
+            <li><b>Unclear event venues:</b> Ticket labels may not clearly specify which location or branch they correspond to.</li>
+        </ul>
+
+        <p class="description" id="HTA2">
+            <b>Hierarchical Task Analysis 2 - </b>View News and Events from the UR-MU website
+        </p>
+        
+        <figure class="HTA">
+            <img src="assets/HTA 2.png">
+        </figure>
+
+        <p class="description" id="questionnaire-description">
+        Pain points identified are:
+        </p>
+
+        <ul class="description-list" id="reward-types">
+            <li><b>Ambigious event information:</b> Users struggle to differentiate which exhibitions belong to which branch or partner venue.</li>
+            <li><b>Disconnected booking flow:</b> Viewing an event and purchasing ticket are treated as separated tasks, forcing users to repeat personal information and steps already provided. </li>
+        </ul>
+    </div>
+</section>
+
+<section class="design-ideation">
+    <div class="problem__head">
+        <span class="problem__no">03</span>
+        <h2 class="problem__title">Design Ideation</h2>
+    </div>
+
+    <p class="description">
+        This phase marks the transition from research insights to tangible design exploration, focusing on two key activities:  
+        <br><b>(a) Parallel Design</b> and <b>(b) Participatory Design</b> to establish a solid framework before progressing into high-fidelity prototyping.
+    </p>
+
+    <div class="parallel-design">
+        <h3>Parallel Design</h3>
+
+        <p class="description">
+            In this stage, we explored multiple design concepts to identify the most effective solutions or combine the strengths of each into a unified design 
+            that best supports project objectives and user needs.
+        </p>
+
+        <p class="description">
+            Three core screens were prioritised for exploration based on insights from preliminary research, each representing a key touchpoint in the visitor journey.
+        </p>
+    </div>
+
+    <div class="button-container">
+        <button class="toggle-btn js-toggle"
+            aria-expanded="false"
+            aria-controls="criteria"
+            data-target="#criteria"
+            data-label-closed="View Design Criterias"
+            data-label-open="View Design Criterias">
+        <span class="label">View design criteria</span>
+    <div class="icons"><img src="icons/Plus.svg" alt=""></div>
+    </button>
+
+        <div class="design-criteria" id="criteria">
+            <img src="assets/Design Criteria.svg" alt="">
+        </div>
+    </div>
+
+    <hr class="section-divider">
+
+    <div class="participatory-design">
+        <h3>Participatory Design</h3>
+
+        <p class="description">
+            Following the parallel design stage, a participatory design session was conducted with 5-6 participants from key user segments of the UR-MU Application. 
+            The selected participants included: <b>Gallery Visitors</b>, <b>Educational Institutions</b>, <b>Art Gallery Staff</b>, and <b>UX Experts</b>.
+        </p>
+    </div>
+
+    <p class="description">
+        Their feedback helped identify common patterns in content categorisation to ensure the final structure reflected both user logic and design consistency.
+        Therefore, the information architecture has formed to define the navigational hierarchy and content structure of the UR-MU Application in a logical grouping
+    </p>
+
+    <figure class="IA">
+        <img src="assets/IA.svg">
+    </figure>
+</section>
+
+<section class="prototype">
+    <div class="problem__head">
+        <span class="problem__no">04</span>
+        <h2 class="problem__title">The Prototype</h2>
+    </div>
+
+    <p class="description">
+        Building upon insights from the design ideation phase, the prototype phase focused on translating validated design concepts into an interactive high-fidelity experience. 
+    </p>
+
+    <p class="description">
+        This stage aimed to visualise the complete user journey of the UR-MU Application, serving as both a design validation tool and a communication medium to demonstrate how the proposed improvements could address the pain points identified in earlier stages.
+    </p>
+
+    <div class="style-guide">
+        <h3>Style Guide</h3>
+
+        <p class="description">
+            A shared style guide ensured visual consistency and alignment across the team, allowing the UR-MU Application to maintain a cohesive and scalable design across all screens. 
+        </p>
+
+        <img src="assets/Style Guide.svg">
+    </div>
+
+    <hr class="section-divider">
+
+    <div class="hi-fi">
+        <h3>High-Fidelity Mockups</h3>
+
+        <p class="description">
+            The final interface was translated into a fully interactive high-fidelity prototype. 
+            <a href="https://www.figma.com/proto/sWyIgL5a7nt6Z94CgyKW1r/HCIAU?page-id=8%3A195&node-id=770-4230&viewport=346%2C176%2C0.05&t=U2qvTqfhR7hIO8Kb-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=770%3A4230" target="_blank" rel="noopener noreferrer">
+                View in Figma
+            </a>to explore user flows, transitions, and key design decisions.
+        </p>
+    </div>
+</section>
+
+<section class="testing">
+    <div class="problem__head">
+        <span class="problem__no">05</span>
+        <h2 class="problem__title">Usability Testing</h2>
+    </div>
+
+    <p class="description">
+        Usability testing was conducted to evaluate whether the redesigned UR-MU Application successfully met primary usability goals: 
+        <b>Efficiency</b>, <b>Memorability</b>, and <b>Subjective Satisfaction</b>. This phase aimed to validate how well users could complete key tasks while 
+        identifying areas for potential design refinement.
+    </p>
+
+    <p class="description" id="questionnaire-description">
+        Participants were asked to complete the following tasks:
+        </p>
+
+        <ul class="description-list" id="reward-types">
+            <li>Create Account: within 3 minutes</li>
+            <li>Make a Booking: within 8 minutes</li>
+            <li>Get Directed to the Location: within 6 minutes</li>
+            <li>Browse, Interact, and Upload Image in Community Discussion: within 3 minutes</li>
+        </ul>
+
+    <div class="outcomes">
+        <h3>Outcomes</h3>
+
+        <p class="description">
+            Every design outcome carries both strengths and opportunities for improvement. 
+            The usability testing of the UR-MU Application revealed strong task completion rates, 
+            along with valuable feedback highlighting areas that could be refined. 
+        </p>
+        
+        <p class="description">
+        These insights reflect how users interacted with the redesigned interface in real scenarios, 
+        uncovering both positive experiences and pain points to guide future iterations.
+        </p> 
+    </div>
+
+    <figure class="feedback">
+        <img src="assets/Feedback.svg">
+    </figure>
+</section>   
+
+<section class="problem">
+    <div class="problem__head">
+        <span class="problem__no">06</span>
+        <h2 class="problem__title">What I Learned?</h2>
+    </div>
+
+    <div class="learn__wrap">
+    <button class="learn__btn prev" aria-label="Previous">&#10094;</button>
+
+    <!-- Scroller -->
+    <div class="learn__scroller" id="learn-scroller">
+        <article class="learn__card">
+            <h3>Optimisation MSatters</h3>
+            <p>Designing flexible pathways to accommodate different user goals and reduce redundant steps by unifying similar flows.</p>
+        </article>
+
+        <article class="learn__card">
+            <h3>Accessibility Drives Inclusivity</h3>
+            <p>Allows design to support all users, including those affected by environmental constraints or physical limitations for an equitable experience.</p>
+        </article>
+
+        <article class="learn__card">
+            <h3>Clarity Over Assumption</h3>
+            <p>Clear and descriptive button labels should be used to help communicate intent as users may interpret symbols differently.</p>
+        </article>
+    </div>
+
+        <button class="learn__btn next" aria-label="Next">&#10095;</button>
+    </div>
+</section>
+
+<footer>
+    <p>© 2025 Copyrights. Designed and coded by Yap Shi Chi.</p>
+</footer>

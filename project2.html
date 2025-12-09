@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Yap Shi Chi | Portfolio</title>
+    <link rel="icon" href="assets/Profile_pic.png" type="image/png"/>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+    
+</head>
+
+<nav class="navbar">
+    <img src="assets/Profile_pic.png" alt="Profile" class="nav-profile" />
+
+    <div class="nav-menu">
+        <a href="index.html" class="active">Projects</a>
+        <a href="other.html">Other Works</a>
+        <a href="about.html">About</a>
+
+        <div class="nav-buttons">
+            <a href="assets/YapShiChi_Resume.pdf" id="resume">
+                <button class="btn-outline">View Resume</button>
+            </a>
+            <a href="https://www.linkedin.com/in/yapshichi/" id="linkedin">
+                <button class="btn-primary">LinkedIn Profile</button>
+            </a>
+        </div>
+    </div>
+</nav>
+
+<div class="FYP">
+    <h2>Improving Welcome Reward Discovery for Higher Redemption Rates</h2>
+    <figure class="feature-media">
+        <img src="assets/HP2.svg">
+    </figure>
+    <div class="projectoverview-box">
+        <h3>Project Overview</h3>
+        <div class="overview-section">
+            <h4>Project</h4>
+            <p>Welcome Reward redemption rates were low across membership merchants, indicating that new users were not aware of or redeeming their rewards effectively. 
+                This project focused on improving reward visibility to reduce friction in the checkout flow, thereby strengthening early customer loyalty.</p>
+        </div>
+        
+        <div class="overview-section">
+            <h4>My Role</h4>
+            <p>Product Design Intern</p>
+        </div>
+        
+        <div class="overview-section">
+            <h4>Timeline</h4>
+            <p>1 week</p>
+        </div>
+        
+        <div class="overview-section">
+            <h4>Platforms & Tools</h4>
+            <p>Figma, StoreHub Beep Delivery</p>
+        </div>
+
+        <div class="overview-section">
+            <h4>Impact</h4>
+            <p>The redesign significantly improved engagement with membership rewards:
+            </p>
+
+            <ul class="description-list2">
+                <li>450% increase in Welcome Reward Redemptions</li>
+                <li>120% increase in reward discovery rate (2.2× more views of reward section)</li>
+            </ul>
+        </div>
+    </div>       
+</div>
+
+
+<section class="design-ideation">
+    <div class="problem__head">
+        <span class="problem__no">01</span>
+        <h2 class="problem__title">Backstory</h2>
+    </div>
+
+    <p class="description">
+        By mid-July, both data and merchant feedback revealed a recurring issue across StoreHub membership merchants: 
+        <b>newly signed-up members were not redeeming their Welcome Rewards</b>. Despite merchants were successfully acquiring new sign-ups, 
+        these users were not converting into early loyal customers, indicating <b>activation was collapsing at the very first touchpoint of the loyalty funnel</b>.
+    </p>
+
+    <div class="button-container">
+        <button class="toggle-btn js-toggle"
+            aria-expanded="false"
+            aria-controls="funnel-breakdown"
+            data-target="#funnel-breakdown"
+            data-label-closed="How the Loyalty Funnel Works"
+            data-label-open="How the Loyalty Funnel Works">
+        <span class="label">How the Loyalty Funnel Works</span>
+    <div class="icons"><img src="icons/Plus.svg" alt=""></div>
+    </button>
+
+        <div class="funnel-breakdown" id="funnel-breakdown">
+            <img src="assets/Funnel.svg" alt="">
+        </div>
+    </div>
+
+    <p class="description">
+        I reviewed the weekly redemption activity across several merchants to understand where the activation was breaking down.
+    </p>
+
+    <p class="description">
+        The weekly redemption data exposed the <b>inconsistency in actual Welcome Reward usage</b>. <b>Saterono</b>, who raised the initial complaint, showed <b>chronically low engagement</b> before 17 July
+        (3-8 redemptions per week) despite having 2,476 registered members. 
+    </p>
+
+    <img src="assets/Redemptions.jpg" id="redemption">
+
+    <p class="description">
+        This pattern revealed a critical friction point: newly joined members were receiving the Welcome Reward, but the platform was not helping them <b>notice</b>, <b>access</b>, or <b>apply</b> it. 
+   
+</section>
+
+<section class="design-ideation">
+    <div class="problem__head">
+        <span class="problem__no">02</span>
+        <h2 class="problem__title">Problem Statement</h2>
+    </div>
+
+    <p class="description">
+        Newly joined members were not redeeming their Welcome Reward because the platform (Beep Delivery) did not adequately surface, signal, or guide users towards using it during check-out. 
+    </p>
+</section>
+
+<section class="design-ideation">
+    <div class="problem__head">
+        <span class="problem__no">03</span>
+        <h2 class="problem__title">Design Direction & Strategy</h2>
+    </div>
+
+    <div class="stakeholder_analysis">
+        <h3>Design Goal</h3>
+        <p class="description">
+        This project focused on increasing the <b>visibility</b> and <b>discoverability of available rewards</b> within the check-out flow, 
+        especially the Welcome Reward, at the exact moment users are deciding whether to complete their order.
+        </p>    
+
+        <h3>WHY This Matters?</h3>
+        <p class="description">
+        From the backstory insights, the core issue was not the reward itself, but the lack of timely, 
+        in-context cues that guide users from awareness → usage.
+        </p> 
+
+        <p class="description">
+        The essential user actions required for a successful redemption:
+        </p>
+        
+        <img src="assets/Reward Ecosystem.svg" id="reward">
+
+        <p class="description">
+        Users were consistently missing the reward because the current experience required them to manually open the voucher section 
+        without any hint that something valuable was waiting inside.  
+        </p>
+
+        <p class="description">
+        This created <I>invisible friction</I> that suppressed both redemption rates and early-stage customer activation.  
+        </p>
+
+        <hr class="section-divider">
+
+        <h3>Design Strategy</h3>
+        <p class="description">
+        We followed a minimal-change, high-impact strategy instead of redesigning the entire checkout flow to avoid unnecessary disruption to the existing check-out experience. 
+        </p>  
+
+        <p class="description" id="strategy">
+        <b>1. Surface Rewards Contextually at the Moment of Purchase</b>
+        </p>
+
+        <p class="description" id="questionnaire-description">
+        We introduced a subtle but high-visibility indicator that alerts users whenever they have an available:
+        </p>
+
+        <ul class="description-list" id="reward-types">
+            <li>Welcome Reward</li>
+            <li>Points Reward</li>
+            <li>Birthday Reward</li>
+            <li>or any applicable unique promotion</li>
+        </ul>
+        
+        <p class="description" id="questionnaire-description">
+        This ensures timely awareness without adding cognitive load or interrupting the flow. 
+        </p>
+
+        <p class="description" id="strategy">
+        <b>2. Preserve Existing Check-Out Mechanics</b>
+        </p>
+
+        <p class="description" id="questionnaire-description">
+        To minimise engineering lift and avoid disrupting merchant operations, the solution did not modify:
+        </p>
+
+        <ul class="description-list" id="reward-types">
+            <li>reward logic</li>
+            <li>promotion validation rules</li>
+            <li>or the Beep Delivery check-out infrastructure</li>
+        </ul>
+
+        <p class="description" id="questionnaire-description">
+        The approach enhances the user experience <i>without touching core systems</i>. 
+        </p>
+
+        <p class="description" id="strategy">
+        <b>3. Encourage Exploration of Other Rewards</b>
+        </p>
+
+        <section class="two-col-section">
+
+            <!-- LEFT COLUMN -->
+            <div class="two-col-left">
+                <p class="description" id="questionnaire-description">
+                    Beyond improving Welcome Reward redemptions, the indicator was intentionally designed to shape healthier 
+                    reward behaviours:
+                </p>
+
+                <ul class="description-list" id="reward-types">
+                    <li>Increase visits to the <i>Apply Promocode</i> page.</li>
+                    <li>Surface additional rewards users may not be aware of</li>
+                    <li>Establish early patterns of reward engagement</li>
+                </ul>
+
+                <p>
+                    This creates a long-term uplift in building customer loyalty and repeat activation, not just a one-time spike. 
+                </p>
+            </div>
+
+            <!-- RIGHT COLUMN -->
+            <div class="two-col-image">
+                <img src="assets/Ice Berg Diagram.svg">
+            </div>
+
+        </section>
+    </div>
+</section>
+
+<section class="design-ideation">
+    <div class="problem__head">
+        <span class="problem__no">04</span>
+        <h2 class="problem__title">Final Solution</h2>
+    </div>
+
+    <div class="stakeholder_analysis">
+        <h3>Design Outcome</h3>
+        <p class="description">
+            <a href="https://www.figma.com/proto/sN6TgQHid9qALLbJLZvmMH/WB-8766-Membership-UI-Improvements?page-id=1%3A70&node-id=4794-2059&viewport=998%2C-345%2C0.26&t=laUqSeYeWP4RBZ38-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=4794%3A2059&show-proto-sidebar=1" target="_blank" rel="noopener noreferrer">
+                Click here
+            </a>to view the interactive animation of the reward visual indicator.
+        </p>    
+
+        <h3>What This SOLVES?</h3>
+        <ul class="description-list">
+            <li><b>Improves reward discoverability</b> by presenting the Welcome Reward directly at the check-out moment. </li>
+            <li><b>Reduces cognitive load</b> by eliminating guesswork and unnecessary navigation to the promocode page when no rewards are available. </li>
+            <li><b>Strengthens early loyalty behaviour</b> by guiding users to explore and apply additional rewards.</li>
+        </ul>
+
+        <hr class="section-divider">
+
+        <h3>Design Iteration</h3>
+        <p class="description">
+        I iterated through multiple design concepts to test how different visual cues could influence reward discovery and user behaviour, 
+        before arriving at the final solution that best balanced clarity, usability, and impact. 
+        </p> 
+
+        <p class="description">
+        These explorations were reviewed through multiple discussions with PMs and CTO to evaluate feasibility and identify the most ideal approach. 
+        </p>
+        
+        <div class="button-container">
+        <button class="toggle-btn js-toggle"
+            aria-expanded="false"
+            aria-controls="design-iteration"
+            data-target="#design-iteration"
+            data-label-closed="View Iterated Prototypes"
+            data-label-open="View Iterated Prototypes">
+        <span class="label">View iterated prototypes</span>
+        <div class="icons"><img src="icons/Plus.svg" alt=""></div>
+    </button>
+
+        <div class="design-iteration" id="design-iteration">
+            <img src="assets/Iterations.svg" alt="">
+        </div>
+    </div>
+</section>
+
+<section class="design-ideation">
+    <div class="problem__head">
+        <span class="problem__no">05</span>
+        <h2 class="problem__title">Results & Impact</h2>
+    </div>
+
+    <p class="description">
+        The solution significantly improved early-stage customer activation, resulting in a <b>450% increase in Welcome Reward redemptions</b> and a <b>120% boost in reward discovery rate</b>. 
+        These outcomes demonstrate that users became far more likely to notice, explore, and apply their available benefits. 
+    </p>
+</section>
+
+<section class="problem">
+    <div class="problem__head">
+        <span class="problem__no">06</span>
+        <h2 class="problem__title">What I Learned?</h2>
+    </div>
+
+    <div class="learn__wrap">
+    <button class="learn__btn prev" aria-label="Previous">&#10094;</button>
+
+    <!-- Scroller -->
+    <div class="learn__scroller" id="learn-scroller">
+        <article class="learn__card" id="wider-card">
+            <h3>Work with Existing Design Systems</h3>
+            <p>Working in a live product ecosystem taught me how to apply fixed colour tokens, spacing rules, 
+                and hierarchy principles to maintain consistency across a mature design system without compromising clarity or visibility. </p>
+        </article>
+
+        <article class="learn__card" id="wider-card">
+            <h3>Align Early with PMs & Engineering</h3>
+            <p>This project exposed me to real agile delivery: grooming sessions, design-engineering alignment, and iterative reviews with PMs and CTO. 
+                I learned how important it is to communicate design intent clearly and co-create solutions that remain technical feasibility. </p>
+        </article>
+
+        <article class="learn__card" id="wider-card">
+            <h3>Design Small, Iterate Often</h3>
+            <p>Not every improvement requires a major redesign. Small-scale, high-impact adjustments can be released gradually to 
+                drive measurable improvements while avoiding disruption to existing user flows. </p>
+        </article>
+
+        <article class="learn__card" id="wider-card">
+            <h3>Feedback Is a Tool, Not a Judgment</h3>
+            <p>Design critiques became a core part of uncovering blind spots. Receiving critiques from senior leaders strengthened my ability to refine, 
+                justify, and evolve design decisions without taking feedback personally. </p>
+        </article>
+    </div>
+
+        <button class="learn__btn next" aria-label="Next">&#10095;</button>
+    </div>
+</section>
+
+<footer>
+    <p>© 2025 Copyrights. Designed and coded by Yap Shi Chi.</p>
+</footer>

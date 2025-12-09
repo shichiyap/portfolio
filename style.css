@@ -1,0 +1,1976 @@
+@font-face {
+  font-family: 'Satoshi'; /* You give it this name */
+  src: url('assets/Satoshi-Variable.ttf') format('truetype'); /* Point to the file */
+}
+
+:root {
+  --page-padding-inline: clamp(16px, 6vw, 120px); /* auto scales with viewport */
+  --page-padding-block: 40px;
+}
+
+/* Generic section container */
+.section {
+  padding: var(--page-padding-block) var(--page-padding-inline);
+  margin: 0 auto;
+  max-width: 1000px;  /* keeps content in a nice column */
+}
+
+.about-section,
+.animations,
+.modelling,
+.VRproject,
+.FYP,
+.problem,
+.experience,
+.design-ideation,
+.prototype,
+.testing,
+.about-shortcut {
+    padding: var(--page-padding-block) var(--page-padding-inline);
+    margin: 0 auto;
+    max-width: 1000px;
+}
+
+
+body {
+    font-family: 'Satoshi', serif;
+    background-color: #F9F8F5;
+    color: #3E3D3D;
+}
+
+header, footer {
+    font-size: 14px;
+    text-align: center;
+    padding: 32px;
+}
+
+/* Navigational Bar */
+.navbar {
+    font-size: 14px;
+    display: flex;                     
+    align-items: center;               
+    justify-content: space-between;    
+    padding: 0 180px;                  
+    margin: 32px;
+}
+
+/* Profile Picture */
+.nav-profile {
+    width: 52px;
+    height: 52px;
+}
+
+/* Menu Section */
+.nav-menu {
+    list-style: none;
+    display: flex;
+    align-items: center;   
+    gap: 48px;
+    margin: 0;
+    padding: 0;
+
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: #3E3D3D;
+    font-weight: 700;
+    opacity: 0.5;
+    transition: color 0.3s;
+}
+
+#linkedin {
+    text-decoration: none;
+    color: #3E3D3D;
+    font-weight: 700;
+    opacity: 1;
+}
+
+#resume {
+    text-decoration: none;
+    color: #FFF;
+    font-weight: 700;
+    opacity: 1;
+}
+
+.nav-menu a:hover {
+    text-decoration: underline;
+}
+
+.nav-menu a.active {
+    text-decoration: none;
+    color: #3E3D3D;
+    opacity: 1;
+}
+
+/* Buttons Section */
+.nav-buttons {
+    display: flex;
+    gap: 24px;
+}
+
+.btn-outline {
+    font-size: 14px;
+    font-weight: 500;
+    padding: 10px 16px;
+    border: none;
+    background-color: #FFF;
+    color: #3E3D3D;
+    border-radius: 32px;
+    box-shadow:
+        0 2px 4px rgba(0, 0, 0, 0.06),
+        0 -2px 4px rgba(0, 0, 0, 0.03);
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.btn-outline:hover {
+    background-color: #E7E0EB;
+}
+
+.btn-primary {
+    font-size: 14px;
+    font-weight: 500;
+    padding: 10px 16px;
+    border: none;
+    background-color: #755388;
+    color: #FFF;
+    border-radius: 32px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-primary:hover {
+    transform: scale(1.1);
+}
+
+/* ---------------------------------------------About-------------------------------------------------------- */
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;  /* two equal-width columns */
+    grid-template-rows: auto auto;   /* two rows */
+    gap: 80px 64px;                  /* row-gap, column-gap */
+    align-items: center;
+}
+
+/* Text blocks */
+.text-block h1 {
+    font-size: 48px;
+    color: #3E3D3D;
+    font-weight: 500;
+    line-height: 1.3;
+}
+
+.text-block h2 {
+    font-size: 40px;
+    color: #3E3D3D;
+    font-weight: 400;
+    line-height: 1.3;
+}
+
+.text-block p {
+    font-size: 20px;
+    line-height: 1.8;
+    color: #3E3D3D;
+}
+
+/* Empty placeholder boxes */
+.empty-box {
+    width: 100%;
+    height: 350px;
+    border-radius: 24px;
+    transition: 0.3s;
+}
+
+.empty-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* fills the box while keeping proportions */
+    border-radius: inherit; /* inherits the 16px radius */
+}
+
+.empty-box:hover {
+    transform: scale(1.05);
+}
+
+/* ----------------------------------------------------------------------------------------------------- */
+
+.life-beyond {
+    margin-top: 120px; /* space above this section */
+}
+
+.life-beyond h2{
+    font-size: 40px;
+    font-weight: 300;
+}
+
+.filmstrip {
+    display: flex;
+    gap: 16px;
+    min-height: 260px;
+    height: clamp(260px, 50vw, 480px); /* responsive height */
+}
+
+.filmstrip .card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+
+/* Base card (no scale here!) */
+.card {
+    cursor: pointer;
+    flex: 1;
+    background: #E9EAED;
+    border-radius: 16px;
+    transition: flex 0.6s;
+    will-change: flex;
+}
+
+/* Default: shrink others when there's an active card */
+.filmstrip:has(.card.active) .card { flex: 0.5; }
+.filmstrip:has(.card.active) .card.active { flex: 3; }
+.filmstrip:has(.card.active:hover) .card.active { flex: 3; }
+
+/* Hover behavior: keep gaps, expand container instead of the card */
+.filmstrip:has(.card:hover) {               /* only container scales */
+    transform: scaleX(1.02);                 
+}
+
+/* Optional: on hover, temporarily treat the hovered card as 'active' */
+.filmstrip:has(.card:hover) .card:hover { flex: 0.7; }
+
+/* ----------------------------------------------------------------------------------------------------- */
+
+.skills {
+    margin-top: 120px;
+}
+
+.skills h2{
+    font-size: 40px;
+    font-weight: 300;
+}
+
+.skills-box {
+    height:180px;    
+    display: flex;
+    flex-wrap: wrap;            /* wrap skill items to new lines if needed */
+    gap: 8px 16px;                  /* space between items */
+    justify-content: left;
+    align-items: center;
+    background: #E2E6FE;          /* example container background */
+    border-radius: 24px;
+    padding: 40px;
+}
+
+/* Chip styling */
+.chip {
+  background: #CAD8FF;
+  color: #755388;
+  font-size: 18px;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 500;
+}
+
+/* ----------------------------------------------------------------------------------------------------- */
+
+.tools {
+    margin-top: 120px;
+}
+
+.tools h2 {
+    font-size: 40px;
+    font-weight: 300;
+}
+
+.tools-box {
+    display: flex;               /* arrange children in a row */
+    flex-wrap: wrap;             /* wrap to next line if needed */
+    justify-content: center;     /* center horizontally */
+    align-items: center;         /* center vertically */
+    gap: 96px;                   /* space between icons */
+    background: #F5F4EF;
+    padding: 24px;
+    border-radius: 16px;
+}
+
+.Figma img {
+    width: 20px;
+    height: auto;
+    object-fit: contain;
+    cursor: pointer;
+}
+
+.Figma {
+    position: relative;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Tooltip styling */
+.Figma .tooltip {
+    position: absolute;
+    bottom: 120%;                     /* positions tooltip above icon */
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    background: #333;
+    color: #fff;
+    padding: 8px 14px;
+    border-radius: 12px;
+    font-size: 0.85rem;
+    text-align: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.25s ease;
+    white-space: nowrap;
+}
+
+/* Tooltip arrow */
+.Figma .tooltip::after {
+    content: "";
+    position: absolute;
+    bottom: -6px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 6px;
+    border-style: solid;
+    border-color: #333 transparent;
+}
+
+/* Hover effect */
+.Figma:hover .tooltip {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+.Chatgpt img {
+    width: 30px;
+    height: auto;
+    object-fit: contain;
+    cursor: pointer;
+}
+
+.Chatgpt {
+    position: relative;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Tooltip styling */
+.Chatgpt .tooltip {
+    position: absolute;
+    bottom: 120%;                     /* positions tooltip above icon */
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    background: #333;
+    color: #fff;
+    padding: 8px 14px;
+    border-radius: 12px;
+    font-size: 0.85rem;
+    text-align: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.25s ease;
+    white-space: nowrap;
+}
+
+/* Tooltip arrow */
+.Chatgpt .tooltip::after {
+    content: "";
+    position: absolute;
+    bottom: -6px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 6px;
+    border-style: solid;
+    border-color: #333 transparent transparent transparent;
+}
+
+/* Hover effect */
+.Chatgpt:hover .tooltip {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+.Notion img {
+    width: 55px;
+    height: auto;
+    object-fit: contain;
+    cursor: pointer;
+}
+
+.Notion {
+    position: relative;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Tooltip styling */
+.Notion .tooltip {
+    position: absolute;
+    bottom: 120%;                     /* positions tooltip above icon */
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    background: #333;
+    color: #fff;
+    padding: 8px 14px;
+    border-radius: 12px;
+    font-size: 0.85rem;
+    text-align: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.25s ease;
+    white-space: nowrap;
+}
+
+/* Tooltip arrow */
+.Notion .tooltip::after {
+    content: "";
+    position: absolute;
+    bottom: -6px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 6px;
+    border-style: solid;
+    border-color: #333 transparent;
+}
+
+/* Hover effect */
+.Notion:hover .tooltip {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+.Miro img {
+    width: 30px;
+    height: auto;
+    object-fit: contain;
+    cursor: pointer;
+}
+
+.Miro {
+    position: relative;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Tooltip styling */
+.Miro .tooltip {
+    position: absolute;
+    bottom: 120%;                     /* positions tooltip above icon */
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    background: #333;
+    color: #fff;
+    padding: 8px 14px;
+    border-radius: 12px;
+    font-size: 0.85rem;
+    text-align: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.25s ease;
+    white-space: nowrap;
+}
+
+/* Tooltip arrow */
+.Miro .tooltip::after {
+    content: "";
+    position: absolute;
+    bottom: -6px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 6px;
+    border-style: solid;
+    border-color: #333 transparent;
+}
+
+/* Hover effect */
+.Miro:hover .tooltip {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+.Jira img {
+    width: 32px;
+    height: auto;
+    object-fit: contain;
+    cursor: pointer;
+}
+
+.Jira {
+    position: relative;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Tooltip styling */
+.Jira .tooltip {
+    position: absolute;
+    bottom: 120%;                     /* positions tooltip above icon */
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    background: #333;
+    color: #fff;
+    padding: 8px 14px;
+    border-radius: 12px;
+    font-size: 0.85rem;
+    text-align: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.25s ease;
+    white-space: nowrap;
+}
+
+/* Tooltip arrow */
+.Jira .tooltip::after {
+    content: "";
+    position: absolute;
+    bottom: -6px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 6px;
+    border-style: solid;
+    border-color: #333 transparent;
+}
+
+/* Hover effect */
+.Jira:hover .tooltip {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+.Googlesheets img {
+    width: 55px;
+    height: auto;
+    object-fit: contain;
+    cursor: pointer;
+}
+
+.Googlesheets {
+    position: relative;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Tooltip styling */
+.Googlesheets .tooltip {
+    position: absolute;
+    bottom: 120%;                     /* positions tooltip above icon */
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    background: #333;
+    color: #fff;
+    padding: 8px 14px;
+    border-radius: 12px;
+    font-size: 0.85rem;
+    text-align: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.25s ease;
+    white-space: nowrap;
+}
+
+/* Tooltip arrow */
+.Googlesheets .tooltip::after {
+    content: "";
+    position: absolute;
+    bottom: -6px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 6px;
+    border-style: solid;
+    border-color: #333 transparent;
+}
+
+/* Hover effect */
+.Googlesheets:hover .tooltip {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+.Mobbin img {
+    width: 52px;
+    height: auto;
+    object-fit: contain;
+    cursor: pointer;
+}
+
+.Mobbin {
+    position: relative;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Tooltip styling */
+.Mobbin .tooltip {
+    position: absolute;
+    bottom: 120%;                     /* positions tooltip above icon */
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    background: #333;
+    color: #fff;
+    padding: 8px 14px;
+    border-radius: 12px;
+    font-size: 0.85rem;
+    text-align: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.25s ease;
+    white-space: nowrap;
+}
+
+/* Tooltip arrow */
+.Mobbin .tooltip::after {
+    content: "";
+    position: absolute;
+    bottom: -6px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 6px;
+    border-style: solid;
+    border-color: #333 transparent;
+}
+
+/* Hover effect */
+.Mobbin:hover .tooltip {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+/* --------------------------------------------Other Works--------------------------------------------------------- */
+
+.animations_2D h2 {
+    font-size: 40px;
+    font-weight: 300;
+    color: #3E3D3D;
+    margin-bottom: 48px;
+}
+
+.project-list {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.project-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+
+/* 1) Reset figure’s default margin so it aligns with the H2 */
+.project-item figure {
+    margin: 0;                 /* <-- important */
+    flex-shrink: 0;
+    width: 200px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* 2) Remove baseline gap so the bottom isn’t “cut” */
+.project-item figure img {
+    display: block;            /* <-- important */
+    width: 200px;
+    height: 128px;
+    object-fit: fill;
+}
+
+/* Layout + icon reveal */
+.project-item {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    border-bottom: 1px solid #E5E5E5;
+    padding-bottom: 32px;
+}
+
+.project-text { 
+    flex: 1; 
+}
+
+.project-text p {
+    font-size: 20px;
+    font-weight: 400;
+    margin-bottom: 8px; /* smaller gap between date and title */
+}
+
+.project-text h3 {
+    font-size: 28px;
+    font-weight: 500;
+    color: #3E3D3D;
+    margin-top: 0; /* remove default top margin */
+}
+
+
+/* push icon to the far right */
+.icon { 
+    margin-left: auto;
+    opacity: 0;
+    transform: translateX(8px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* show icon on row hover */
+.project-item:hover .icon {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* size the external SVG file (used as <img>) */
+.icon img {
+    width: 28px;
+    height: 28px;
+}
+
+/* ----------------------------------------------------------------------------------------------------- */
+
+.project-list2 {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+
+/* 1) Reset figure’s default margin so it aligns with the H2 */
+.project-item2 figure {
+    margin: 0;                 /* <-- important */
+    flex-shrink: 0;
+    width: 200px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* 2) Remove baseline gap so the bottom isn’t “cut” */
+.project-item2 figure img {
+    display: block;            /* <-- important */
+    width: 200px;
+    height: 128px;
+    object-fit: fill;
+}
+
+/* Layout + icon reveal */
+.project-item2 {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    border-bottom: 1px solid #E5E5E5;
+    padding-top: 32px;
+    padding-bottom: 32px;
+}
+
+.project-text2 { 
+    flex: 1; 
+}
+
+.project-text2 p {
+    font-size: 20px;
+    font-weight: 400;
+    margin-bottom: 8px; /* smaller gap between date and title */
+}
+
+.project-text2 h3 {
+    font-size: 28px;
+    font-weight: 500;
+    color: #3E3D3D;
+    margin-top: 0; /* remove default top margin */
+}
+
+
+/* push icon to the far right */
+.icon { 
+    margin-left: auto;
+    opacity: 0;
+    transform: translateX(8px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* show icon on row hover */
+.project-item2:hover .icon {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* size the external SVG file (used as <img>) */
+.icon img {
+    width: 28px;
+    height: 28px;
+}
+
+/* ----------------------------------------------------------------------------------------------------- */
+
+.project-list3 {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+
+/* 1) Reset figure’s default margin so it aligns with the H2 */
+.project-item3 figure {
+    margin: 0;                 /* <-- important */
+    flex-shrink: 0;
+    width: 200px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* 2) Remove baseline gap so the bottom isn’t “cut” */
+.project-item3 figure img {
+    display: block;            /* <-- important */
+    width: 200px;
+    height: 128px;
+    object-fit: fill;
+}
+
+/* Layout + icon reveal */
+.project-item3 {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    border-bottom: 1px solid #E5E5E5;
+    padding-top: 32px;
+    padding-bottom: 32px;
+}
+
+.project-text3 { 
+    flex: 1; 
+}
+
+.project-text3 p {
+    font-size: 20px;
+    font-weight: 400;
+    margin-bottom: 8px; /* smaller gap between date and title */
+}
+
+.project-text3 h3 {
+    font-size: 28px;
+    font-weight: 500;
+    color: #3E3D3D;
+    margin-top: 0; /* remove default top margin */
+}
+
+
+/* push icon to the far right */
+.icon { 
+    margin-left: auto;
+    opacity: 0;
+    transform: translateX(8px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* show icon on row hover */
+.project-item3:hover .icon {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* size the external SVG file (used as <img>) */
+.icon img {
+    width: 28px;
+    height: 28px;
+}
+
+/* ----------------------------------------------------------------------------------------------------- */
+
+.modelling h2 {
+    font-size: 40px;
+    font-weight: 300;
+    color: #3E3D3D;
+    margin-bottom: 48px;
+}
+
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 32px;
+}
+
+.modelling .card img {
+  width: 100%;
+  height: clamp(220px, 30vw, 260px); /* same height for all cards */
+  object-fit: cover;                 /* crop instead of squish */
+  display: block;
+}
+
+
+/* Card styling */
+.card {
+    border-radius: 24px;
+    background: #FFFFFF;
+    box-shadow: 0 1px 2px rgba(0,0,0,.04),
+                0 8px 24px rgba(0,0,0,.06);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    cursor: default;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: 500;
+    color: #3E3D3D;
+    margin: 0px;
+    padding: 32px 32px 0px 32px;
+}
+
+.caption {
+    font-size: 16px;
+    color: #3E3D3D;
+    line-height: 140%;
+    margin: 0px;
+    padding: 16px 32px 0px 32px;
+}
+
+.btn {
+    margin-top: 32px;
+    margin-bottom: 32px;
+    margin-left:28px;
+    align-self: flex-start;
+    display: inline-block;
+    padding: 8px 16px;
+    border-radius: 999px;
+    background: #755388;
+    color: #FFFFFF;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    transform: scale(1.1);
+}
+
+/* ----------------------------------------------------------------------------------------------------- */
+.VRproject h2 {
+    font-size: 40px;
+    font-weight: 300;
+    color: #3E3D3D;
+    margin-bottom: 48px;
+}
+
+.feature-media {
+    margin: 0px;
+}
+
+.feature-media img{
+    max-width: 100%;
+    max-height: auto;
+    object-fit: contain;           /* full image visible */
+    transition: transform .35s ease;
+}
+
+
+.feature-media:hover img{
+    transform: scale(1.02);
+}
+
+/* Text */
+.feature-title{
+    font-size: 28px;
+    font-weight: 500;
+    color:#3E3D3D;
+    margin: 32px 0 10px;
+}
+
+.feature-sub{
+    font-size: 20px;
+    color:#3E3D3D;
+    line-height: 140%;
+    margin: 16px 0 16px;
+    max-width: 72ch;
+}
+
+/* Tag pills */
+.tags{
+    list-style: none;
+    padding: 0;
+    margin: 24px 0 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.tags li{
+    background: #FFFFFF;
+    color: #3E3D3D;
+    font-size: 14px;
+    padding: 8px 14px;
+    margin-bottom: 24px;
+    border-radius: 999px;
+    border: 1px solid #E5E7EB;
+    box-shadow: 0 1px 0 rgba(0,0,0,.02);
+}
+
+.feature-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+    font-size: 16px;
+    color: #755388;
+    text-decoration: none;              /* no default underline */
+
+    /* animated underline */
+    background-image: linear-gradient(#755388, #755388);
+    background-position: 0 100%;        /* bottom left */
+    background-repeat: no-repeat;
+    background-size: 0% 2px;            /* start: no line */
+    transition: background-size 0.35s ease;  /* animation */
+}
+
+.feature-link:hover {
+    color: #755388;                     /* keep same colour or change if you like */
+    background-size: 80% 2px;          /* line grows left → right */
+}
+
+
+.ArrowRight img {
+    justify-content: center;
+    width: 18px;                 /* adjust icon size */
+    height: 18px;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.feature-link:hover .ArrowRight img {
+    transform: translateX(4px);  /* subtle slide on hover */
+}
+
+/* --------------------------------------------FYP Inner Page--------------------------------------------------------- */
+
+.FYP h2 {
+    font-size: 40px;
+    font-weight: 300;
+    color: #3E3D3D;
+    margin-bottom: 48px;
+}
+
+.projectoverview-box {
+    margin-top: 48px;
+    background: #FFF4E9;
+    border-radius: 24px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;  
+    gap: 40px; 
+}
+
+.projectoverview-box h3 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #3E3D3D;
+    margin: 0; /* no default spacing */
+}
+
+.overview-section {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.overview-section h4 {
+    font-size: 16px;
+    font-weight: 500;
+    color: #3E3D3D;
+    margin: 0; /* removes browser default margin */
+}
+
+.overview-section p {
+    margin: 0; /* keeps paragraph tight to title */
+    font-size: 16px;
+    color: #3E3D3D;
+    line-height: 1.6;
+}
+
+/* ----------------------------------------------------------------------------------------------------- */
+
+.problem {
+    margin: 0 auto;
+}
+
+.problem__head{
+    display: grid;
+    grid-template-columns: 1fr auto; /* number left, title right */
+    align-items: baseline;
+    column-gap: 16px;
+}
+
+.problem__no{
+    font-size: 32px;
+    font-weight: 400;
+}
+
+.problem__title{
+    font-size: 32px;           /* adjust to match your type scale */
+    font-weight: 600;
+    color: #3E3D3D;
+    margin: 0;
+}
+
+.problem__intro {
+    font-size: 18px;
+    color: #3E3D3D;
+    margin: 16px 0 48px;
+    line-height: 1.7;
+}
+
+/* Definition list styled like bullets */
+.problem__list {
+    margin: 0;
+}
+
+.problem__item {
+    margin: 32px 0 48px;
+}
+
+.problem__item dt {
+    font-weight: 600;
+    font-size: 20px;
+    color: #3E3D3D;
+    margin: 0 0 4px 0;
+}
+
+.problem__item dd {
+    font-size: 18px;
+    color: #3E3D3D;
+    margin: 0;
+    line-height: 1.65;
+}
+
+#target-audience {
+    width: 70%;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+
+/* ----------------------------------------------------------------------------------------------------- */
+
+/* Two-column workflow grid */
+.workflow{
+    display: grid;
+    grid-template-columns: 380px 1fr;   /* left = titles, right = bullets */
+    column-gap: 48px;
+    row-gap: 48px;                      /* vertical space between rows */
+    margin: 32px 0 48px;
+    padding: 0;
+    align-items: center;
+}
+
+.workflow dt{
+    font-weight: 600;
+    font-size: 20px;
+    color: #3E3D3D;
+    line-height: 1.35;
+    margin: 0;                          /* remove default dl spacing */
+}
+
+.workflow dd{
+    margin: 0;                          /* align to grid neatly */
+}
+
+.workflow ul{
+    font-size: 18px;
+    color: #3E3D3D;
+    margin: 0;                          /* remove extra top gap */
+    padding-left: 2em;                /* bullet indent */
+    line-height: 1.7;
+}
+
+.workflow li + li{ margin-top: 6px; } 
+
+
+/* Slider wrapper positions the arrows */
+.learn__wrap{
+    position: relative;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Scroller */
+.learn__scroller{
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    padding: 8px 8px 16px;             /* bottom pad for hidden scrollbar */
+}
+
+/* Hide scrollbar (keeps accessibility) */
+.learn__scroller::-webkit-scrollbar{ height: 0; }
+.learn__scroller{ scrollbar-width: none; }
+
+/* Cards */
+.learn__card{
+    margin-top: 24px;
+    flex: 0 0 78%;                      /* shows a peek of next card */
+    max-width: 380px;
+    scroll-snap-align: start;
+    background: #FAE5D1;                /* your pastel */
+    border-radius: 16px;
+    padding: 40px;
+}
+
+.learn__card h3{ margin: 0 0 32px; font-size: 20px; font-weight:600; color: #3E3D3D }
+.learn__card p{ margin: 0; line-height: 1.65; color:#72480F; font-size: 18px }
+
+/* Arrows */
+.learn__btn{
+    position: absolute;
+    top: 50%;
+    translate: 0 -50%;
+    border: none;
+    background: #FFFFFF;
+    backdrop-filter: blur(4px);
+    padding: 10px 12px;
+    border-radius: 999px;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0,0,0,.12);
+}
+.learn__btn.prev{ left: -4px; }
+.learn__btn.next{ right: -4px; }
+.learn__btn:disabled{ opacity:.4; cursor: default; }
+
+/* ---------------------------------------------Projects-------------------------------------------------------- */
+
+.intro h3 {
+    font-size: 28px;
+    font-weight: 500;
+    color: #3E3D3D;
+    line-height: 1.65;
+    margin-bottom: 48px;
+}
+
+.uxproject_1 h2 {
+    font-size: 40px;
+    font-weight: 300;
+    color: #3E3D3D;
+    margin-top: 120px;
+    margin-bottom: 48px;
+}
+
+:root{
+    --card-bg:#fff;
+    --text:#272727;
+    --muted:#6B6B6B;
+    --chip:#F2F2F4;
+    --radius:40px;
+    --shadow:0 1px 2px rgba(0,0,0,.04), 0 12px 32px rgba(0,0,0,.08);
+}
+
+
+.case-card{
+    background:var(--card-bg);
+    color:var(--text);
+    border-radius:var(--radius);
+    box-shadow:var(--shadow);
+    overflow:hidden;                 /* keeps the image corners rounded */
+    display:grid;
+    grid-template-rows:auto 1fr;
+    margin-bottom: 80px;
+}
+
+.case-card__media {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 350px;
+    background:#f6f6f6;
+    overflow: hidden;
+}
+
+.case-card__media img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;   /* show entire image */
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.case-card__media:hover img{
+    transform: scale(1.08);
+}
+
+
+/* Body */
+.case-card__body{
+    padding: 12px 40px 32px;
+}
+
+.case-card__body h3{
+    font-size: 28px;
+    font-weight: 500;
+    color:#3E3D3D;
+    margin: 24px 0 10px;
+}
+
+.case-card__body p{
+    font-size: 20px;
+    color:#3E3D3D;
+    line-height: 140%;
+    margin: 16px 0 16px;
+    max-width: 72ch;
+}
+
+/* Stats */
+.case-card__stats{
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0,1fr));
+    gap: 24px;
+    margin: 48px 0 24px;
+}
+
+.stat{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.stat__value{
+    font-size: clamp(22px, 3vw, 32px);
+    font-weight: 500;
+}
+
+.stat__label{
+    color: var(--muted);
+    font-size: 16px;
+    line-height: 1.4;
+    margin-bottom: 20px;
+}
+
+/* ---------------------------------------------Handpicked Project 1-------------------------------------------------------- */
+
+.FYP h2 {
+    font-size: 40px;
+    font-weight: 300;
+    color: #3E3D3D;
+    margin-bottom: 48px;
+}
+
+.projectoverview-box {
+    margin-top: 48px;
+    background: #FFF4E9;
+    border-radius: 24px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;  
+    gap: 40px; 
+}
+
+.projectoverview-box h3 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #3E3D3D;
+    margin: 0; /* no default spacing */
+}
+
+.overview-section {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.overview-section h4 {
+    font-size: 16px;
+    font-weight: 500;
+    color: #3E3D3D;
+    margin: 0; /* removes browser default margin */
+}
+
+.overview-section p {
+    margin: 0; /* keeps paragraph tight to title */
+    font-size: 16px;
+    color: #3E3D3D;
+    line-height: 1.6;
+}
+
+/* ----------------------------------------------------------------------------------------------------- */
+
+.problem {
+    margin: 0 auto;
+}
+
+.problem__head{
+    display: grid;
+    grid-template-columns: 1fr auto; /* number left, title right */
+    align-items: baseline;
+    column-gap: 16px;
+}
+
+.problem__no{
+    font-size: 32px;
+    font-weight: 400;
+}
+
+.problem__title{
+    font-size: 32px;           /* adjust to match your type scale */
+    font-weight: 600;
+    color: #3E3D3D;
+    margin: 0;
+}
+
+.problem__intro {
+    font-size: 18px;
+    color: #3E3D3D;
+    margin: 16px 0 48px;
+    line-height: 1.7;
+}
+
+/* Definition list styled like bullets */
+.problem__list {
+    margin: 0;
+}
+
+.problem__item {
+    margin: 32px 0 48px;
+}
+
+.problem__item dt {
+    font-weight: 600;
+    font-size: 20px;
+    color: #3E3D3D;
+    margin: 0 0 4px 0;
+}
+
+.problem__item dd {
+    font-size: 18px;
+    color: #3E3D3D;
+    margin: 0;
+    line-height: 1.65;
+}
+
+.target-audience {
+    text-align: center;
+    margin-top: 80px;
+}
+
+.target-audience img {
+    max-width: 90%;
+    height: auto;
+    margin: 32px 0 48px;
+}
+
+/* ----------------------------------------------------------------------------------------------------- */
+
+.stakeholder_analysis h3{
+    font-size: 20px;           /* adjust to match your type scale */
+    font-weight: 600;
+    color: #3E3D3D;
+    margin: 0;
+}
+
+.stakeholder_analysis p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.matrix img {
+    width: 105%;
+    height: auto;
+    display: block;
+}
+
+.description-list {
+    font-size: 18px;
+    color: #3E3D3D;
+    line-height: 1.6;
+}
+
+.description-list li {
+    list-style-type: disc; /* ensures bullet shows */
+}
+
+.section-divider {
+    border: none;                  /* removes default style */
+    border-top: 2px solid #E5E5E5; /* line color and thickness */
+    margin: 48px 0;                /* space above and below */
+    width: 100%;                    /* adjust width to your layout */
+    margin-left: auto;             /* centers the line */
+    margin-right: auto;            /* centers the line */
+}
+
+.questionnaire-surveys h3 {
+    font-size: 20px;           /* adjust to match your type scale */
+    font-weight: 600;
+    color: #3E3D3D;
+    margin: 0;
+}
+
+.questionnaire-surveys p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+#questionnaire-description {
+    margin: 0px;
+}
+
+.quotes h3 {
+    font-size: 20px;
+    font-weight: 600px;
+    color: #3E3D3D;
+    margin-top: 48px;
+}
+
+/* Grid layout */
+.expectation-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+/* Card styling */
+.expectation-card {
+    background: #E5F0FF;         /* soft pastel blue */
+    border-radius: 12px;
+    padding: 16px 20px;
+    width: 147px;                /* you can adjust width */
+    font-size: 13px;
+    line-height: 1.6;
+    color: #0044FE;
+}
+
+.observations h3 {
+    font-size: 20px;           /* adjust to match your type scale */
+    font-weight: 600;
+    color: #3E3D3D;
+    margin: 0;
+}
+
+.observations p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.toggle-btn {
+    background-color: #1E1515;      /* dark brown-black */
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+    border: none;
+    border-radius: 40px;
+    padding: 12px 20px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: transform 0.2s;
+}
+
+.toggle-btn:hover {
+    background-color: #2E2625;
+    transform: scale(1.02);
+}
+
+.button-container {
+    text-align: center;
+    margin: 40px 0px 40px;
+}
+
+.icons img {
+    padding-top: 2px;
+    width: 18px;
+    height: 18px;
+    display: inline-block;
+}
+
+
+.observation-outcome img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-top: 24px;
+}
+
+.observation-outcome {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+}
+
+.observation-outcome.open {
+    max-height: 1200px; /* adjust to fit image height */
+}
+
+.experience p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.current-website h3 {
+    font-size: 20px;
+    font-weight: 600px;
+    color: #3E3D3D;
+    margin-top: 48px;
+}
+
+.current-website p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.task-analysis h3{
+    font-size: 20px;           /* adjust to match your type scale */
+    font-weight: 600;
+    color: #3E3D3D;
+    margin: 0;
+}
+
+.task-analysis p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.HTA {
+    display: flex;
+    justify-content: center;
+}
+
+.HTA img {
+    max-width: 110%;
+    height: auto;
+}
+
+#HTA2 {
+    margin-top: 48px;
+}
+
+.design-ideation h3 {
+    font-size: 20px;
+    font-weight: 600px;
+    color: #3E3D3D;
+    margin-top: 48px;
+}
+
+.design-ideation p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.design-criteria img {
+    max-width: 105%;
+    height: auto;
+    display: block;
+    margin-top: 24px;
+}
+
+.design-criteria {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+}
+
+.design-criteria.open {
+    max-height: 1200px; /* adjust to fit image height */
+}
+
+.card-sorting img {
+    max-width: 80%;
+    height: auto;
+    display: block;
+    margin: 48px auto;
+}
+
+.card-sorting {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+}
+
+.card-sorting.open {
+    max-height: 1200px; /* adjust to fit image height */
+}
+
+.prototype h3 {
+    font-size: 20px;
+    font-weight: 600px;
+    color: #3E3D3D;
+    margin-top: 48px;
+}
+
+.prototype p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.IA img {
+    max-width:75%;
+    height: auto;
+    display: block;
+    margin: 32px auto 0px;
+}
+
+.style-guide img {
+    max-width: 100%;
+    height: auto;
+    display: contain;
+    margin-top: 24px;
+}
+
+.testing h3 {
+    font-size: 20px;
+    font-weight: 600px;
+    color: #3E3D3D;
+    margin-top: 48px;
+}
+
+.testing p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.feedback img {
+    max-width: 90%;
+    height: auto;
+    display: block;
+    margin: 40px 48px;
+}
+
+.description-list2 {
+    margin: 0px;
+    font-size: 16px;
+    color: #3E3D3D;
+    line-height: 1.6;
+}
+
+
+/* ----------------------------------------------------------------------------------------------------- */
+
+
+.funnel-breakdown img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 32px auto;
+}
+
+.funnel-breakdown {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+}
+
+.funnel-breakdown.open {
+    max-height: 1200px; /* adjust to fit image height */
+}
+
+#redemption {
+    width: 35%;
+    height: auto;
+    display: block;
+    margin: 48px 0 48px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#reward {
+    width: 75%;
+    height: auto;
+    display: block;
+    margin: 48px 0 48px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#first-reward {
+    margin-top: 40px;
+}
+
+#strategy {
+    margin: 0px;
+    margin-bottom: 8px;
+    margin-top: 32px;
+}
+
+
+#reward-description {
+    margin: 0px;
+    margin-top: 40px;
+}
+
+#reward-types {
+    margin: 0px;
+}
+
+.two-col-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 50% / 50% */
+    align-items: start;
+    gap: 48px;
+}
+
+
+.two-col-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;    /* optional */
+    object-fit: contain;    /* keeps the diagram intact */
+}
+
+.design-iteration img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-top: 24px;
+}
+
+.design-iteration {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+}
+
+.design-iteration.open {
+    max-height: 1200px; /* adjust to fit image height */
+}
+
+#wider-card {
+    max-width: 480px;
+}
+
+.audit-outcomes img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 32px auto;
+}
+
+.audit-outcomes {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+}
+
+.audit-outcomes.open {
+    max-height: 1200px; /* adjust to fit image height */
+}
+
+#standardisation {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 24px 0 40px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.text-box {
+    width: 100%;               /* full width */
+    display: block;            /* ensures full-width behavior */
+    padding: 18px 32px;
+    border: 2px solid #755388;
+    border-radius: 16px;
+    font-size: 18px;
+    font-family: 'Satoshi', sans-serif;
+    text-align: center;
+    box-sizing: border-box;    /* keeps padding inside 100% width */
+}
+
+#component-architecture {
+    width: 80%;
+    height: auto;
+    display: block;
+    margin: 24px 0 24px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+#documentation-guidelines {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 24px 0 24px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Responsive layout for mobile */
+@media (max-width: 768px) {
+    .two-col-section {
+        grid-template-columns: 1fr; /* stack vertically */
+        gap: 32px;
+    }
+}
+
+
+/* Large tablets & down */
+@media (max-width: 1024px) {
+  .navbar {
+    padding: 0 40px;
+    margin: 24px 0;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+    row-gap: 48px;
+  }
+
+  .workflow {
+    grid-template-columns: 1fr;
+    row-gap: 24px;
+  }
+
+  .card-grid {
+    gap: 24px;
+  }
+}
+
+/* Mobile-ish */
+@media (max-width: 768px) {
+  :root {
+    --page-padding-inline: 16px;
+  }
+
+  body {
+    font-size: 14px;
+  }
+
+  .navbar {
+    padding: 0 16px;
+  }
+
+  .nav-menu {
+    gap: 16px;
+  }
+
+  .skills-box {
+    padding: 24px;
+  }
+
+  .feature-media {
+    aspect-ratio: 4 / 3;
+  }
+
+  .learn__card {
+    flex: 0 0 90%;
+    padding: 24px;
+  }
+
+  .filmstrip {
+    height: clamp(220px, 60vw, 360px);
+  }
+}
+
+
+

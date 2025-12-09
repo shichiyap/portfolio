@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Yap Shi Chi | Portfolio</title>
+    <link rel="icon" href="assets/Profile_pic.png" type="image/png"/>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+    
+</head>
+
+<nav class="navbar">
+    <img src="assets/Profile_pic.png" alt="Profile" class="nav-profile" />
+
+    <div class="nav-menu">
+        <a href="index.html" class="active">Projects</a>
+        <a href="other.html">Other Works</a>
+        <a href="about.html">About</a>
+
+        <div class="nav-buttons">
+            <a href="assets/YapShiChi_Resume.pdf" id="resume">
+                <button class="btn-outline">View Resume</button>
+            </a>
+            <a href="https://www.linkedin.com/in/yapshichi/" id="linkedin">
+                <button class="btn-primary">LinkedIn Profile</button>
+            </a>
+        </div>
+    </div>
+</nav>
+
+<div class="FYP">
+    <h2>Consolidating Scattered Design Assets into a Unified Library</h2>
+    <figure class="feature-media">
+        <img src="assets/HP3.png">
+    </figure>
+    <div class="projectoverview-box">
+        <h3>Project Overview</h3>
+        <div class="overview-section">
+            <h4>Project</h4>
+            <p>Welcome Reward redemption rates were low across membership merchants, indicating that new users were not aware of or redeeming their rewards effectively. 
+                This project focused on improving reward visibility to reduce friction in the checkout flow, thereby strengthening early customer loyalty.</p>
+        </div>
+        
+        <div class="overview-section">
+            <h4>My Role</h4>
+            <p>Product Design Intern</p>
+        </div>
+        
+        <div class="overview-section">
+            <h4>Timeline</h4>
+            <p>1 week</p>
+        </div>
+        
+        <div class="overview-section">
+            <h4>Platforms & Tools</h4>
+            <p>Figma, StoreHub Beep Delivery</p>
+        </div>
+
+        <div class="overview-section">
+            <h4>Impact</h4>
+            <p>The redesign significantly improved engagement with membership rewards:
+            </p>
+
+            <ul class="description-list2">
+                <li>450% increase in Welcome Reward Redemptions</li>
+                <li>120% increase in reward discovery rate (2.2× more views of reward section)</li>
+            </ul>
+        </div>
+    </div>       
+</div>
+
+<section class="design-ideation">
+    <div class="problem__head">
+        <span class="problem__no">01</span>
+        <h2 class="problem__title">Backstory</h2>
+    </div>
+
+    <p class="description">
+        Over the years, StoreHub’s Product Design team went through many transitions. 
+        As designers joined and left, documentation practices became inconsistent and design files evolved without a clear source of truth. 
+        Gradually, the organisation accumulated <b>fragmented legacy libraries</b>, <b>duplicated components</b>, and <b>outdated UI patterns</b>. 
+    </p>
+
+    <p class="description">
+        Without a standardised foundation, designers frequently had to rebuild the same components from scratch, sometimes repeatedly for
+        identical use cases, resulting in slow and error-prone workflows.
+    </p>
+
+    <div class="stakeholder_analysis">
+        <h3>Why a Design System Was Needed?</h3>
+        <p class="description">
+        A typical design task spanned 1-2 weeks, from design exploration to grooming with engineers. 
+        But in reality, the actual hands-on design time was limited once meetings, alignment sessions, and reviews were accounted for.
+        </p>
+        
+        <p class="description" id="questionnaire-description">
+        Without reusable components:
+        </p>
+
+        <ul class="description-list" id="reward-types">
+            <li>a significant portion of time was spent recreating UI</li>
+            <li>engineering faced mismatched specs, slowing development</li>
+            <li>even small tasks became operationally heavy</li>
+        </ul>
+
+        <p class="description">
+       A unified component library was no longer a <i>“nice to have”</i>, instead it became essential infrastructure for delivering fast and scalable product work. 
+        </p>
+    </div>
+
+</section>
+
+<section class="design-ideation">
+    <div class="problem__head">
+        <span class="problem__no">02</span>
+        <h2 class="problem__title">Audit & Insights</h2>
+    </div>
+
+    <p class="description">
+        A full audit was conducted across all legacy Figma files to understand the depth of design debt and inform what needed to be rebuilt.
+    </p>
+
+    <div class="stakeholder_analysis">
+        <h3>Legacy Design System Audit</h3>
+        <p class="description">
+        The audit revealed major workflow bottlenecks that often go unnoticed. 
+        Designers spent more time searching for components than designing due to recreating UI from scratch was often faster than locating existing components. 
+        </p>
+    </div>
+
+    <div class="button-container">
+        <button class="toggle-btn js-toggle"
+            aria-expanded="false"
+            aria-controls="audit-outcomes"
+            data-target="#audit-outcomes"
+            data-label-closed="Audit Outcomes"
+            data-label-open="Audit Outcomes">
+        <span class="label">Audit Outcomes</span>
+    <div class="icons"><img src="icons/Plus.svg" alt=""></div>
+    </button>
+
+        <div class="audit-outcomes" id="audit-outcomes">
+            <img src="assets/Audit Outcomes.svg" alt="">
+        </div>
+    </div>
+
+    <hr class="section-divider">
+
+    <div class="stakeholder_analysis">
+        <h3>What We Standardised?</h3>
+        <p class="description">
+        Based on the audit, several areas were identified as critical for cleanup and reconstruction in a centralised Figma file, forming the foundation of the design system framework: 
+        </p>
+    </div>
+
+    <img src="assets/Standardisation.svg" id="standardisation">
+
+</section>
+
+<section class="design-ideation">
+    <div class="problem__head">
+        <span class="problem__no">03</span>
+        <h2 class="problem__title">Design Process & Solutions</h2>
+    </div>
+
+    <div class="stakeholder_analysis">
+        <h3>How I Approached the Rebuild?</h3>
+        <p class="description">
+        Rebuilding the design system was far more than a simple clean-up exercise. It required identifying UI patterns and reconstructing components with long-term scalability in mind. 
+        </p>
+
+        <p class="description">
+        To ensure the system could grow with future product changes, I followed a bottom-up rebuild strategy:
+        <div class="text-box">
+            Start with core primitives → Build components → Connect user flows
+        </div>
+        </p>
+        <p class="description" id="questionnaire-description">
+        This approach allowed that every element in the system was stable and ready for future product evolution.
+        </p>
+    </div>
+
+    <hr class="section-divider">
+
+    <h3>My Design System Framework</h3>
+        <p class="description">
+        Under this section, I defined how the entire system is structured <i>(from the atomic level to complete user flows)</i>, clarifying how components are built, 
+        how screens are standardised, and how designers apply the system consistently across platforms. 
+        </p>
+
+        <p class="description" id="strategy">
+        <b>1. Component Architecture</b>
+        </p>
+
+        <p class="description" id="questionnaire-description">
+        Using an atomic design approach, I rebuilt the system starting from core primitives <i>(text styles, colours, icons)</i> and progressively structured them into molecules, organisms, and full templates.  
+        </p>
+
+        <img src="assets/Component Architecture.png" id="component-architecture">
+
+        <p class="description" id="questionnaire-description">
+        Each component was redesigned with clear variants and usage logic so designers could assemble screens faster while reusing patterns consistently across platforms. 
+        This architecture certainly forms the backbone of the new design system as it ensures scalability, efficient reuse, and predictable behaviour across StoreHub’s products.  
+        </p>
+
+        <p class="description" id="strategy">
+        <b>2. Screen Standards</b>
+        </p>
+
+        <p class="description" id="questionnaire-description">
+        StoreHub products operate across multiple environments, such as mobile applications, tablets in restaurants, and desktop BackOffice tools. 
+        To ensure responsiveness behaviour across all interfaces, we standardised three primary screen sizes:
+        </p>
+
+        <ul class="description-list" id="reward-types">
+            <li><b>Mobile:</b> 375px x 767px</li>
+            <li><b>Tablet:</b> 834px x 1190px</li>
+            <li><b>Desktop:</b> 1440px x 820px</li>
+        </ul>
+
+        <p>
+        We adopted a <b>mobile-first approach</b> to maximise <i>scalability</i>. 
+        By starting from the smallest breakpoint, components could expand logically across tablet and desktop layouts without redesigning each element from scratch. 
+        </p>
+
+        <p class="description" id="strategy">
+        <b>3. Documentation Guidelines</b>
+        </p>
+
+        <p class="description" id="questionnaire-description">
+        Alongside rebuilding the design system, I created documentation for each component with clear anatomy breakdowns, usage rules, variants, and actual implementation examples.   
+        </p>
+
+        <img src="assets/Documentation Guidelines.svg" id="documentation-guidelines">
+
+        <p class="description" id="questionnaire-description">
+        This reduced ambiguity during design and handoff, allowing designers and engineers to work with consistent patterns and predictable behaviour across platforms
+        </p>
+</section>
+
+<section class="design-ideation">
+    <div class="problem__head">
+        <span class="problem__no">04</span>
+        <h2 class="problem__title">Results & Impact</h2>
+    </div>
+
+    <p class="description">
+        The rebuilt design system delivered measurable improvements across StoreHub’s product design workflow. With clearer documentation, including component anatomy, usage rules, and behaviour guidelines, we achieved <b>improved scalability</b> and <b>higher design-engineering alignment</b>.  
+    </p>
+
+    <p class="description">
+        Overall, the consolidated library restored structure, clarity, and efficiency to the entire workflow, transforming the previous design bottleneck into an accelerant for faster product development.   
+    </p>
+</section>
+
+<section class="problem">
+    <div class="problem__head">
+        <span class="problem__no">05</span>
+        <h2 class="problem__title">What I Learned?</h2>
+    </div>
+
+    <div class="learn__wrap">
+    <button class="learn__btn prev" aria-label="Previous">&#10094;</button>
+
+    <!-- Scroller -->
+    <div class="learn__scroller" id="learn-scroller">
+        <article class="learn__card" id="wider-card">
+            <h3>Design Systems Must Be Flexible and Scalable</h3>
+            <p>I learned that a design system should never be “final” and they must adapt as the product evolves. 
+                Creating structures that allow variants to grow, swap, and extend ensures the system remains relevant. </p>
+        </article>
+
+        <article class="learn__card" id="wider-card">
+            <h3>Documentation Is as Important as Design</h3>
+            <p>I learned that a well-built component means nothing if the team does not know when or how to use it. 
+                Clear documentation ensures straightforward system adoption and prevents another design debt. </p>
+        </article>
+
+        <article class="learn__card" id="wider-card">
+            <h3>Consistency Builds Brand Identity</h3>
+            <p>A unified design system ensures consistent visual language and supports smoother handovers between design, product, and engineering. </p>
+        </article>
+
+        
+    </div>
+
+        <button class="learn__btn next" aria-label="Next">&#10095;</button>
+    </div>
+</section>
+
+<footer>
+    <p>© 2025 Copyrights. Designed and coded by Yap Shi Chi.</p>
+</footer>
