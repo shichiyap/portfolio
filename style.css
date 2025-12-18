@@ -1925,6 +1925,9 @@ header, footer {
     margin-right: auto;
 }
 
+
+
+
 /* Responsive layout for mobile */
 @media (max-width: 768px) {
     .two-col-section {
