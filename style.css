@@ -1527,7 +1527,7 @@ header, footer {
 
 .quotes h3 {
     font-size: 20px;
-    font-weight: 600px;
+    font-weight: 600;
     color: #3E3D3D;
     margin-top: 48px;
 }
@@ -1619,7 +1619,7 @@ header, footer {
 
 .current-website h3 {
     font-size: 20px;
-    font-weight: 600px;
+    font-weight: 600;
     color: #3E3D3D;
     margin-top: 48px;
 }
@@ -1627,6 +1627,13 @@ header, footer {
 .current-website p {
     font-size: 18px;
     line-height: 1.6;
+}
+
+.current-website img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 48px auto;
 }
 
 .task-analysis h3{
@@ -1657,7 +1664,7 @@ header, footer {
 
 .design-ideation h3 {
     font-size: 20px;
-    font-weight: 600px;
+    font-weight: 600;
     color: #3E3D3D;
     margin-top: 48px;
 }
@@ -1703,7 +1710,7 @@ header, footer {
 
 .prototype h3 {
     font-size: 20px;
-    font-weight: 600px;
+    font-weight: 600;
     color: #3E3D3D;
     margin-top: 48px;
 }
@@ -1729,7 +1736,7 @@ header, footer {
 
 .testing h3 {
     font-size: 20px;
-    font-weight: 600px;
+    font-weight: 600;
     color: #3E3D3D;
     margin-top: 48px;
 }
@@ -1753,6 +1760,19 @@ header, footer {
     line-height: 1.6;
 }
 
+.sneakpeak h3 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #3E3D3D;
+    margin-top: 48px;
+}
+
+.sneakpeak img {
+    max-width: 100%;
+    height: auto;
+    display: contain;
+    margin-top: 24px;
+}
 
 /* ----------------------------------------------------------------------------------------------------- */
 
