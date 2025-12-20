@@ -1,39 +1,21 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const strip = document.querySelector('.filmstrip');
-  if (!strip) return;
+const toggleBtn = document.querySelector(".nav-toggle");
+const overlay = document.querySelector(".nav-overlay");
 
-  strip.addEventListener('click', (e) => {
-    const card = e.target.closest('.card');
-    if (!card || !strip.contains(card)) return;
-
-    const current = strip.querySelector('.card.active');
-    if (current !== card) {
-      current?.classList.remove('active');
-      card.classList.add('active');
-    }
-  });
-
-  // (Nice to have) Keyboard accessibility
-  strip.querySelectorAll('.card').forEach((c) => {
-    c.tabIndex = 0;
-    c.setAttribute('role', 'button');
-    c.setAttribute('aria-pressed', c.classList.contains('active') ? 'true' : 'false');
-
-    c.addEventListener('keydown', (ev) => {
-      if (ev.key === 'Enter' || ev.key === ' ') {
-        ev.preventDefault();
-        c.click();
-      }
-    });
-  });
-
-  // Keep aria-pressed in sync when active changes
-  strip.addEventListener('click', () => {
-    strip.querySelectorAll('.card').forEach((c) =>
-      c.setAttribute('aria-pressed', c.classList.contains('active') ? 'true' : 'false')
-    );
-  });
+toggleBtn.addEventListener("click", () => {
+  document.body.classList.toggle("menu-open");
+  const open = document.body.classList.contains("menu-open");
+  toggleBtn.setAttribute("aria-expanded", String(open));
+  overlay.setAttribute("aria-hidden", String(!open));
 });
+
+overlay.addEventListener("click", (e) => {
+  if (e.target === overlay) {
+    document.body.classList.remove("menu-open");
+    toggleBtn.setAttribute("aria-expanded", "false");
+    overlay.setAttribute("aria-hidden", "true");
+  }
+});
+
 
 
 // learn-slider.js
@@ -109,6 +91,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+
 
 
 

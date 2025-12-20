@@ -255,15 +255,17 @@ header, footer {
 }
 
 .skills-box {
-    height:180px;    
+    min-height: 180px;      /* keeps your desktop look */
+    height: auto;           /* allows it to grow */
     display: flex;
-    flex-wrap: wrap;            /* wrap skill items to new lines if needed */
-    gap: 8px 16px;                  /* space between items */
-    justify-content: left;
+    flex-wrap: wrap;
+    gap: 8px 16px;
+    justify-content: flex-start;  /* use flex-start instead of left */
     align-items: center;
-    background: #E2E6FE;          /* example container background */
+    background: #E2E6FE;
     border-radius: 24px;
     padding: 40px;
+    box-sizing: border-box;
 }
 
 /* Chip styling */
@@ -1009,7 +1011,6 @@ header, footer {
     color: #3E3D3D;
     font-size: 14px;
     padding: 8px 14px;
-    margin-bottom: 24px;
     border-radius: 999px;
     border: 1px solid #E5E7EB;
     box-shadow: 0 1px 0 rgba(0,0,0,.02);
@@ -1926,74 +1927,299 @@ header, footer {
 }
 
 
+/* -------------------------------------------------------------------------RESPONSIVE DESIGN--------------------------------------------------------------------------------- */
+
+/* =======================
+   NAV (Desktop base)
+======================= */
+
+.navbar{
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 180px;
+  margin: 32px;
+  position: relative;
+}
+
+.nav-brand { display: inline-flex; align-items: center; }
+
+/* Hamburger hidden on desktop */
+.nav-toggle{
+  display: none;
+  width: 44px;
+  height: 44px;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  border-radius: 12px;
+}
+
+/* Hamburger lines */
+.nav-toggle span{
+  display: block;
+  height: 2px;
+  width: 22px;
+  margin: 5px auto;
+  background: #3E3D3D;
+  border-radius: 999px;
+}
+
+/* Drawer hidden on desktop */
+.nav-drawer{ display: none; }
+
+.nav-overlay{
+  display: none;
+}
+
+/* ===== Tablet & below ===== */
+@media (max-width: 768px){
+
+    /* keep navbar layout, but make it responsive */
+    .navbar{
+        padding: 0 var(--page-padding-inline);
+        margin: 16px 0;
+        position: relative;
+        z-index: 1002; /* always above overlay */
+    }
+
+    /* hide the desktop horizontal menu */
+    .desktop-menu{
+        display: none;
+    }
+
+    /* show hamburger */
+    .nav-toggle{
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 44px;
+        height: 44px;
+        border: 0;
+        background: transparent;
+        cursor: pointer;
+        border-radius: 12px;
+        z-index: 1003; /* above overlay too */
+    }
+
+    .nav-toggle span{
+        position: absolute;
+        width: 22px;
+        height: 2px;
+        background: #3E3D3D;
+        border-radius: 999px;
+        transform: translateX(-50%);
+        transition: transform 0.25s ease, opacity 0.2s ease;
+    }
+
+    /* place the 3 lines */
+    .nav-toggle span:nth-child(1){ top: 14px; }
+    .nav-toggle span:nth-child(2){ top: 21px; }
+    .nav-toggle span:nth-child(3){ top: 28px; }
+
+  /* Fullscreen purple overlay (only shows when open) */
+    .nav-overlay{
+        display: block;
+        position: fixed;
+        inset: 0;
+        background: rgba(231, 224, 235, 0.92);
+        backdrop-filter: blur(6px);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.25s ease;
+        z-index: 1001; /* below navbar + button */
+    }
+
+    body.menu-open .nav-overlay{
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    /* Center menu items */
+    .nav-overlay__content{
+        min-height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 28px;
+        text-align: center;
+        padding: 0 24px 0px; /* space so it doesn't collide with navbar */
+        opacity: 0;
+        transform: translateY(8px);
+        transition: opacity 0.25s ease, transform 0.25s ease;
+    }
+
+    body.menu-open .nav-overlay__content{
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .nav-overlay__content a{
+        text-decoration: none;
+        color: #3E3D3D;
+        font-weight: 500;
+        font-size: 18px;
+        opacity: 0.8;
+        transition: opacity 0.2s ease; /* <-- correct unit */
+    }
+
+    .nav-overlay__content a:hover{
+        opacity: 1;
+    }
+
+    .nav-overlay__actions{
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        margin-top: 10px;
+    }
+
+    .nav-overlay__actions .btn-outline,
+    .nav-overlay__actions .btn-primary{
+        min-width: 180px;
+        justify-content: center;
+    }
+
+    body.menu-open .nav-toggle span:nth-child(1){
+        top: 21px; /* move to center */
+        transform: translateX(-50%) rotate(45deg);
+    }
+
+    body.menu-open .nav-toggle span:nth-child(2){
+  opacity: 0;
+    }
+
+    body.menu-open .nav-toggle span:nth-child(3){
+        top: 21px; /* move to center */
+        transform: translateX(-50%) rotate(-45deg);
+    }
 
 
-/* Responsive layout for mobile */
-@media (max-width: 768px) {
+    /* optional: stop background scrolling when open */
+    body.menu-open{
+        overflow: hidden;
+    }
+
+    .expectation-grid{
+        flex-direction: column;
+        flex-wrap: nowrap;
+        width: 100%;
+    }
+
+    .expectation-card{
+        width: 100%;
+        box-sizing: border-box;
+        min-width: 0;
+        overflow-wrap: anywhere;
+  }
+
     .two-col-section {
         grid-template-columns: 1fr; /* stack vertically */
         gap: 32px;
     }
+
+    .about-grid{
+    grid-template-columns: 1fr;   /* single column */
+    grid-template-rows: auto;
+    gap: 48px;                    /* reduce spacing */
+    align-items: start;
+  }
+
+  .skills-box{
+    padding: 28px;
+    gap: 8px 12px;
+  }
+
+  .chip{
+    font-size: 16px;
+    padding: 8px 16px;
+  }
+
+  .tools-box{
+    gap: 40px;                 /* smaller gap */
+    padding: 20px;
+  }
+
+  /* make icons more consistent */
+  .tools-box img{
+    width: 34px;               /* override different widths */
+    height: auto;
+  }
+
+  /* optional: allow tooltips to fit on smaller screens */
+  .tools-box .tooltip{
+    font-size: 0.8rem;
+    padding: 6px 10px;
+    max-width: 220px;
+    white-space: normal;       /* wrap instead of overflow */
+    text-align: center;
+  }
+
 }
 
+    
 
-/* Large tablets & down */
-@media (max-width: 1024px) {
-  .navbar {
-    padding: 0 40px;
-    margin: 24px 0;
+/* ===== Mobile tweak ===== */
+@media (max-width: 375px){
+  .nav-overlay__content{
+    gap: 22px;
+    padding: 110px 18px 32px;
+  }
+  .nav-overlay__content a{
+    font-size: 16px;
   }
 
-  .about-grid {
-    grid-template-columns: 1fr;
-    row-gap: 48px;
+  .expectation-grid{
+    flex-direction: column;
+    gap: 12px;              /* slightly tighter than tablet */
+    width: 100%;
   }
 
-  .workflow {
-    grid-template-columns: 1fr;
-    row-gap: 24px;
+  .expectation-card{
+    width: 100%;
+    padding: 14px 16px;     /* reduce side padding */
+    font-size: 14px;        /* improve readability on small screens */
+    box-sizing: border-box;
+    min-width: 0;
+    overflow-wrap: anywhere;
   }
 
-  .card-grid {
+  .two-col-section{
+    gap: 24px; /* tighter for small screens */
+  }
+
+  .about-grid{
+    gap: 32px;
+  }
+
+  .skills-box{
+    padding: 20px;
+    border-radius: 18px;
+  }
+
+  .chip{
+    font-size: 15px;
+    padding: 8px 14px;
+  }
+
+  .tools-box{
     gap: 24px;
+    padding: 16px;
+    justify-content: space-around;  /* fills space nicely */
+  }
+
+  .tools-box img{
+    width: 30px;
+  }
+
+  .tools-box .tooltip{
+    max-width: 180px;
   }
 }
 
-/* Mobile-ish */
-@media (max-width: 768px) {
-  :root {
-    --page-padding-inline: 16px;
-  }
 
-  body {
-    font-size: 14px;
-  }
-
-  .navbar {
-    padding: 0 16px;
-  }
-
-  .nav-menu {
-    gap: 16px;
-  }
-
-  .skills-box {
-    padding: 24px;
-  }
-
-  .feature-media {
-    aspect-ratio: 4 / 3;
-  }
-
-  .learn__card {
-    flex: 0 0 90%;
-    padding: 24px;
-  }
-
-  .filmstrip {
-    height: clamp(220px, 60vw, 360px);
-  }
-}
 
 
 

@@ -17,23 +17,59 @@
 </head>
 
 <nav class="navbar">
-    <img src="assets/Profile_pic.png" alt="Profile" class="nav-profile" />
 
-    <div class="nav-menu">
-        <a href="/" class="active">Projects</a>
-        <a href="other">Other Works</a>
-        <a href="about">About</a>
+    <!-- Profile (left) -->
+    <a href="index.html" class="nav-brand">
+      <img
+        src="assets/Profile_pic.png"
+        alt="Profile"
+        class="nav-profile"
+        width="52"
+        height="52"
+      />
+    </a>
 
-        <div class="nav-buttons">
-            <a href="assets/YapShiChi_Resume.pdf" id="resume">
-                <button class="btn-outline">View Resume</button>
-            </a>
-            <a href="https://www.linkedin.com/in/yapshichi/" id="linkedin">
-                <button class="btn-primary">LinkedIn Profile</button>
-            </a>
-        </div>
+    <!-- Desktop menu -->
+    <div class="nav-menu desktop-menu">
+      <a href="project.html" class="active">Projects</a>
+      <a href="other.html">Other Works</a>
+      <a href="about.html">About</a>
+
+      <div class="nav-buttons">
+        <button class="btn-outline">View Resume</button>
+        <button class="btn-primary">LinkedIn Profile</button>
+      </div>
     </div>
-</nav>
+
+    <!-- Hamburger (tablet/mobile) -->
+    <button
+      class="nav-toggle"
+      aria-label="Menu"
+      aria-expanded="false"
+      type="button"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+  </nav>
+
+  <!-- ================= OVERLAY MENU ================= -->
+  <div class="nav-overlay" aria-hidden="true">
+    <div class="nav-overlay__content">
+
+      <a href="project.html">Projects</a>
+      <a href="other.html">Other Works</a>
+      <a href="about.html">About</a>
+
+      <div class="nav-overlay__actions">
+        <button class="btn-outline">View Resume</button>
+        <button class="btn-primary">LinkedIn Profile</button>
+      </div>
+
+    </div>
+  </div>
 
 <div class="FYP">
     <h2>UR-MU Application</h2>
