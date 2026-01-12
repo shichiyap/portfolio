@@ -71,37 +71,23 @@ header, footer {
 
 }
 
-.nav-menu a {
-    text-decoration: none;
-    color: #3E3D3D;
-    font-weight: 700;
-    opacity: 0.5;
-    transition: color 0.3s;
+/* Only style the 3 nav links (Projects / Other Works / About) */
+.nav-menu > a {
+  text-decoration: none;
+  color: #3E3D3D;
+  font-weight: 700;
+  opacity: 0.5;
+  transition: color 0.3s;
 }
 
-#linkedin {
-    text-decoration: none;
-    color: #3E3D3D;
-    font-weight: 700;
-    opacity: 1;
+.nav-menu > a:hover {
+  text-decoration: underline;
 }
 
-#resume {
-    text-decoration: none;
-    color: #FFF;
-    font-weight: 700;
-    opacity: 1;
+.nav-menu > a.active {
+  opacity: 1;
 }
 
-.nav-menu a:hover {
-    text-decoration: underline;
-}
-
-.nav-menu a.active {
-    text-decoration: none;
-    color: #3E3D3D;
-    opacity: 1;
-}
 
 /* Buttons Section */
 .nav-buttons {
@@ -122,6 +108,10 @@ header, footer {
         0 -2px 4px rgba(0, 0, 0, 0.03);
     cursor: pointer;
     transition: 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
 }
 
 .btn-outline:hover {
@@ -138,6 +128,10 @@ header, footer {
     border-radius: 32px;
     cursor: pointer;
     transition: 0.3s;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
 }
 
 .btn-primary:hover {
